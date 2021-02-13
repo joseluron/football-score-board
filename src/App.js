@@ -8,14 +8,14 @@ const AppStyles = styled.div`
 `;
 
 const App = () => {
-  const {scores, startMatch, updateMatch} = useScoreBoard();
+  const {scores, startMatch, updateMatch, finishMatch} = useScoreBoard();
   
   return (
     <>
       <AppStyles>
         <h1>Football Live Score Board</h1>
         {scores && scores.map((match, index) => 
-          <Match key={index} match={{...match, index}} startMatch={startMatch} updateMatch={updateMatch} />
+          <Match key={index} match={{...match, index}} startMatch={startMatch} updateMatch={updateMatch} finishMatch={finishMatch} />
         )}
       </AppStyles>
     </>

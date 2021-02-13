@@ -27,7 +27,14 @@ const useScoreBoard = () => {
         setScores(allScores);
     }
 
-    return {scores, startMatch, updateMatch};
+    const finishMatch = (matchIndex) => {
+        setScores([
+            ...scores.slice(0, matchIndex),
+            ...scores.slice(matchIndex +1),
+        ]);
+    }
+
+    return {scores, startMatch, updateMatch, finishMatch};
 }
 
 export default useScoreBoard;
