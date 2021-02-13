@@ -26,7 +26,7 @@ const MatchStyles = styled.div`
 	}
 `;
 
-const Match = ({ match, startMatch }) => {
+const Match = ({ match, startMatch, updateMatch }) => {
 	const { homeTeam, homeTeamScore, awayTeam, awayTeamScore, started, index } = match;
 	
 	return (
@@ -45,6 +45,8 @@ const Match = ({ match, startMatch }) => {
 				<div className="match-actions">
 					{started ? (
 						<>
+							<button onClick={() => updateMatch(index, 'home')}>Home Team Goal</button>
+							<button onClick={() => updateMatch(index, 'away')}>Away Team Goal</button>
 							<button>Finish Match</button>
 						</>
 					) : (

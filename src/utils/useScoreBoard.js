@@ -17,7 +17,17 @@ const useScoreBoard = () => {
         setScores(allScores);
     }
 
-    return {scores, startMatch};
+    const updateMatch = (matchIndex, scoredTeam) => {
+        const allScores = [...scores];
+        const updatedMatch = {
+            ...allScores[matchIndex],
+            [`${scoredTeam}TeamScore`]: allScores[matchIndex][`${scoredTeam}TeamScore`] + 1
+        }
+        allScores[matchIndex] = updatedMatch;
+        setScores(allScores);
+    }
+
+    return {scores, startMatch, updateMatch};
 }
 
 export default useScoreBoard;
