@@ -11,11 +11,17 @@ const MatchStyles = styled.div`
 		flex-direction: column;
 
 		.team-score {
-			width: 150px;
+			max-width: 150px;
+			min-width: 100px;
 			padding: 1rem;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+
+			span {
+				font-size: 15px;
+				font-weight: bold;
+			}
 		}
 	}
 
