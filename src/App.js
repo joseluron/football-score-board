@@ -11,6 +11,8 @@ const AppStyles = styled.div`
 
 const App = () => {
   const {scores, startMatch, updateMatch, finishMatch, summary, getSummary} = useScoreBoard();
+
+  const startedMatches = scores.filter(match => match.started).length;
   
   return (
     <>
@@ -22,7 +24,7 @@ const App = () => {
         {scores && scores.map((match, index) => 
           <Match key={index} match={{...match, index}} startMatch={startMatch} updateMatch={updateMatch} finishMatch={finishMatch} />
         )}
-        {summary && <Summary summary={summary} getSummary={getSummary} />}
+        <Summary summary={summary} getSummary={getSummary} startedMatches={startedMatches} />
       </AppStyles>
     </>
   );

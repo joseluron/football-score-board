@@ -15,7 +15,8 @@ const useScoreBoard = () => {
         const allScores = [...scores];
         const startedMatch = {
             ...allScores[matchIndex],
-            started: true
+            started: true,
+            timestamp: Date.now()
         };
         allScores[matchIndex] = startedMatch;
         setScores(allScores);
